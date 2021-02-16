@@ -24,8 +24,7 @@ public class BinaryOperatorParselet implements InfixParselet {
         // lower precedence when parsing the right-hand side. This will let a
         // parselet with the same precedence appear on the right, which will then
         // take *this* parselet's result as its left-hand argument.
-        Expression right = parser.parseExpression(
-                mPrecedence - (mIsRight ? 1 : 0));
+        Expression right = parser.parseExpression(mIsRight ? mPrecedence - 1 : mPrecedence);
 
         return new OperatorExpression(left, token.getType(), right);
     }
