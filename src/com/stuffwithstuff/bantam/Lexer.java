@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class Lexer implements Iterator<Token> {
     private final Map<Character, TokenType> mPunctuators =
-            new HashMap<Character, TokenType>();
+            new HashMap<>();
     private final String mText;
     private int mIndex = 0;
 

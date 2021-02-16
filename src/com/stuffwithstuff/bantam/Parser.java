@@ -8,11 +8,11 @@ import java.util.*;
 
 public class Parser {
     private final Iterator<Token> mTokens;
-    private final List<Token> mRead = new ArrayList<Token>();
+    private final List<Token> mRead = new ArrayList<>();
     private final Map<TokenType, PrefixParselet> mPrefixParselets =
-            new HashMap<TokenType, PrefixParselet>();
+            new HashMap<>();
     private final Map<TokenType, InfixParselet> mInfixParselets =
-            new HashMap<TokenType, InfixParselet>();
+            new HashMap<>();
 
     public Parser(Iterator<Token> tokens) {
         mTokens = tokens;
