@@ -9,7 +9,7 @@ import com.stuffwithstuff.bantam.expressions.NameExpression;
  * Simple parselet for a named variable like "abc".
  */
 public class NameParselet implements PrefixParselet {
-  public Expression parse(Parser parser, Token token) {
-    return new NameExpression(token.getText());
-  }
+    public Expression parse(Parser parser, Token token) {
+        return new NameExpression(token.getText());
+    }
 }

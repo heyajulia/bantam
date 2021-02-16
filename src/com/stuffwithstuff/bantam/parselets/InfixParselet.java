@@ -13,6 +13,7 @@ import com.stuffwithstuff.bantam.expressions.Expression;
  * which case it simply doesn't consume any more tokens in its parse() call.
  */
 public interface InfixParselet {
-  Expression parse(Parser parser, Expression left, Token token);
-  int getPrecedence();
+    Expression parse(Parser parser, Expression left, Token token);
+
+    int getPrecedence();
 }

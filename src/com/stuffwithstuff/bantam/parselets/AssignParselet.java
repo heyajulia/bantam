@@ -14,15 +14,17 @@ import com.stuffwithstuff.bantam.expressions.NameExpression;
  * right-associative. (In other words, "a = b = c" is parsed as "a = (b = c)").
  */
 public class AssignParselet implements InfixParselet {
-  public Expression parse(Parser parser, Expression left, Token token) {
-    Expression right = parser.parseExpression(Precedence.ASSIGNMENT - 1);
-    
-    if (!(left instanceof NameExpression)) throw new ParseException(
-        "The left-hand side of an assignment must be a name.");
-    
-    String name = ((NameExpression)left).getName();
-    return new AssignExpression(name, right);
-  }
+    public Expression parse(Parser parser, Expression left, Token token) {
+        Expression right = parser.parseExpression(Precedence.ASSIGNMENT - 1);
 
-  public int getPrecedence() { return Precedence.ASSIGNMENT; }
+        if (!(left instanceof NameExpression)) throw new ParseException(
+                "The left-hand side of an assignment must be a name.");
+
+        String name = ((NameExpression) left).getName();
+        return new AssignExpression(name, right);
+    }
+
+    public int getPrecedence() {
+        return Precedence.ASSIGNMENT;
+    }
 }

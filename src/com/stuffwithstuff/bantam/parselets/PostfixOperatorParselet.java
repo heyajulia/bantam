@@ -10,17 +10,17 @@ import com.stuffwithstuff.bantam.expressions.PostfixExpression;
  * unary "?" expressions.
  */
 public class PostfixOperatorParselet implements InfixParselet {
-  public PostfixOperatorParselet(int precedence) {
-    mPrecedence = precedence;
-  }
-  
-  public Expression parse(Parser parser, Expression left, Token token) {
-    return new PostfixExpression(left, token.getType());
-  }
+    private final int mPrecedence;
 
-  public int getPrecedence() {
-    return mPrecedence;
-  }
-  
-  private final int mPrecedence;
+    public PostfixOperatorParselet(int precedence) {
+        mPrecedence = precedence;
+    }
+
+    public Expression parse(Parser parser, Expression left, Token token) {
+        return new PostfixExpression(left, token.getType());
+    }
+
+    public int getPrecedence() {
+        return mPrecedence;
+    }
 }
