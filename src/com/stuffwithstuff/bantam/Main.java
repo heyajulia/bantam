@@ -19,7 +19,7 @@ public class Main {
         test("~!-+a", "(~(!(-(+a))))");
         test("a!!!", "(((a!)!)!)");
 
-        // Unary and binary predecence.
+        // Unary and binary precedence.
         test("-a * b", "((-a) * b)");
         test("!a + b", "((!a) + b)");
         test("~a ^ b", "((~a) ^ b)");
